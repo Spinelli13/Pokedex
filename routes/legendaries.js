@@ -3,8 +3,10 @@ const router = express.Router();
 const controller = require('../controller/LegendariesController');
 
 
-router.get('/pineco', controller.getOneLegendary);
-router.get('/all', controller.getAllLegendaries);
+router.get('/' , controller.index);
+router.post('/', controller.create);
+
+
 
 
 
