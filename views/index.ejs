@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Pokédex</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <header>
-      <div>
-       <img src="../public/images/Logo.png" width="50px;" alt="logoPoke" /><i class="logoPoke"></i>
-      </div>
-      <nav class="itens-menu">
-        <ul class="itens">
-          <li><a>Home</a></li>
-          <li><a>Pokédex</a></li>
-          <li><a>Legendaries</a></li>
-          <li><a>Documentation</a></li>
-        </ul>
-      </nav>
-    </header>
-    
-  </body>
+
+<head>
+  <title>Pokédex</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <header>
+    <img src="/images/Logo.svg" width="50px;" alt="Logo" /><i class="logo"></i>
+    <button type="button" alt="menu" class="hamburguer">
+      <img src="/images/BurgenBtn.svg" alt="hamburguer-menu">
+    </button>
+    <nav class="navbar" id="navbar-desktop">
+      <a href="#">Home
+      </a>
+      <a href="#">Pokédex
+      </a>
+      <a href="#">Legendaries
+      </a>
+      <a href="#">Documentation
+      </a>
+      </ul>
+    </nav>
+
+  </header>
+  <main>
+    <img src="/images/pikachu.svg" alt="Pikachu" />
+    <div>
+      <h1><strong>Find</strong> all your favorite <strong>Pokemon</strong></h1>
+      <p>You can know the type of Pokemon, its strenghs, disadvantagens and abilities.</p>
+      <a class="botao">See Pokemons</a>
+    </div>
+  </main>
+</body>
+
 </html>

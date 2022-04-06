@@ -1,9 +1,131 @@
+* {
+  font-family: 'Karla', sans-serif;
+  border: 0;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5DB13;
+  padding: 10px;
+  box-shadow: 0px 4px 16px rgba(1, 28, 64, 0.2);
+  z-index: 1;
+}
+
+header>img {
+  width: 64px;
+}
+
+header>button {
+  background: none;
+  cursor: pointer;
+}
+
+header>img {
+  width: 128px;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-a {
-  color: #00B7FF;
+main {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  background: linear-gradient(#F5DB13, #F2B807);
 }
 
+main>div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 0 50px;
+}
+
+main>div>h1 {
+  font-size: 72px;
+  font-weight: normal;
+  margin-bottom: 64px;
+  padding: 15px 77px;
+}
+
+main>div>p {
+  font-size: 32px;
+  padding: 0 77px;
+}
+
+.navbar>a {
+  font-size: 25px;
+  margin: 0 158px 0 0;
+  text-decoration: none;
+  color: black;
+
+}
+
+
+
+.botao {
+  background-color: rgba(115, 214, 119, 1);
+  width: 231px;
+  height: 66px;
+  box-shadow: inset 0px -9px 0px rgba(0, 0, 0, 0.18);
+  border-radius: 11px;
+  margin-top: 20px;
+  font-size: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+
+}
+
+.navbar>a:hover {
+  text-decoration: underline;
+}
+
+.hamburguer {
+  display: none;
+}
+
+
+@media(max-width: 650px) {
+  #navbar-desktop {
+    display: none;
+  }
+
+  .hamburguer {
+    display: block;
+  }
+}
+
+/* @media (min-width: 481px) {
+header {
+  padding: 20px 10px;
+}
+
+header > img {
+  width: 128px;
+}
+}
+
+@media(min-width:650px) {
+  #navbar-desktop{
+    display: none;
+  }
+  .hamburguer{
+    display: block;
+  }
+} */
