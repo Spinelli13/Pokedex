@@ -101,14 +101,131 @@ main>div>p {
   display: none;
 }
 
+.cadastroLogin {
+  border: none;
+  background: linear-gradient(#F5DB13, #F2B807);
+  color: black;
+  width: 160px;
+  height: 36px;
+  font-size: 24px;
+}
 
-@media(max-width: 650px) {
-  #navbar-desktop {
-    display: none;
+.login {
+  border: none;
+  background: linear-gradient(#F5DB13, #F2B807);
+  color: black;
+  width: 160px;
+  height: 36px;
+  font-size: 24px;
+}
+
+.formulario {
+  border: none;
+  width: 500px;
+  height: 50px;
+  border-radius: 38px;
+  font-size: 18px;
+  margin: 10px 0px 10px 0px;
+  display: flex;
+  justify-content: center;
+
+
+}
+
+.botoes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 25px auto;
+  text-align: center;
+}
+
+.entrar {
+  background-color: #F5DB13;
+  color: black;
+  width: 198px;
+  height: 42px;
+}
+
+.botoes-sigIn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 25px auto;
+  text-align: center;
+}
+
+.limpar {
+  background-color: #F5DB13;
+  text-decoration-color: black;
+  width: 198px;
+  height: 42px;
+
+}
+
+button:hover {
+  background-color: #F2B807;
+}
+
+
+
+
+.botao-flutuante {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 64px;
+  height: 64px;
+  transition: all 1s;
+}
+
+.botao-flutuante>img {
+  width: 100%;
+}
+
+.botao-flutuante:hover {
+  width: 96px;
+  height: 96px;
+}
+
+.dark-mode {
+  background-color: gray;
+}
+
+.dark-mode>nav>a {
+  color: white;
+}
+
+.dark-mode-main{
+  background: linear-gradient(gray, black);
+  color: white;
+}
+
+
+
+@media (max-width: 748px) {
+  header {
+    padding: 20px 10px;
   }
 
-  .hamburguer {
-    display: block;
+  header > img {
+    width: 128px;
+  }
+
+  .navbar {
+    display: none;
+  }
+}
+
+@media (min-width: 749px) {
+  .navbar {
+    display: flex;
+  }
+
+  .hamburguer-menu {
+    display: none;
   }
 }
 

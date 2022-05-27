@@ -6,6 +6,6 @@ const controller = {
            url: 'http://localhost:3000/uploads/${filename}' 
         })
     }
-}
+};
 
 module.exports = controller;

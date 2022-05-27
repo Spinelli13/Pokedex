@@ -1,64 +1,40 @@
-const LegendaryModel = require('../models/LegendaryModel');
-const { uuid } = require('uuidv4');
-
+const database = require('../database/models');
 
 const LegendariesService = {
-    ListLegendaries: () => {
-        const Mewtwo = new LegendaryModel(
-            1 , 
-            'Mewtwo',
-            'Its DNA is almost the same as Mews. However, its size and disposition are vastly different',
-            'Fogo',
-            '1000,00',
-            '1000,00',
-            '1000,00',
-            '1000,00',
-            '1000,00',
-            '1000,00');
-        
-            const Moltres = new LegendaryModel(
-                2 , 
-                'Moltres',
-                'Its DNA is almost the same as Mews. However, its size and disposition are vastly different',
-                'Fogo',
-                '1000,00',
-                '1000,00',
-                '1000,00',
-                '1000,00',
-                '1000,00',
-                '1000,00');    
-    
-        return [Mewtwo, Moltres];
+    ListLegendaries: async () => {
+        await database.Legendary.findAll();
     },
-    ListPokemonData: (pokemonName) => {
-        const pokemonList = LegendariesService.ListLegendaries();
-        const pokemon = pokemonList.find(item => item.name === pokemonName)
-    
-        return pokemon;    
+    ListPokemonData: async (pokemonName) => {
+        const legendary = await database.Legendary.findOne({
+            where: {
+                name: pokemonName
+            }
+        });
+        return legendary;
     },
     createLegendary: (
-        name, 
-        description, 
-        type, 
-        healthPoints, 
-        specialAttack, 
-        defense,  
-        attack, 
-        experiencie, 
+        name,
+        description,
+        type,
+        healthPoints,
+        specialAttack,
+        defense,
+        attack,
+        experiencie,
         specialDefense
     ) => {
-        const newLegendary = new LegendaryModel(
-        uuid(),
-        name, 
-        description, 
-        type, 
-        healthPoints, 
-        specialAttack, 
-        defense,  
-        attack, 
-        experiencie, 
+       const newLegendary =  await database.Legendary.create({
+            name,
+        description,
+        type,
+        healthPoints,
+        specialAttack,
+        defense,
+        attack,
+        experiencie,
         specialDefense
-        )
+        });
+        return newLegendary
     }
 }
 

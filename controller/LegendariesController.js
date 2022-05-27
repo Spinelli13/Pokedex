@@ -1,45 +1,44 @@
-const { response } = require('express');
 const LegendariesService = require('../service/LegendariesServices')
 
 const controller = {
-  index: (request,response) => {
-    const {id} = request.params
-  const {name} = request.query
+  indexAll: async (request, response) => {
+    const legendaries = await LegendariesService.ListLegendaries();
+    return response.json(legendaries);
+  }, 
+  index: async (request, response) => {  
+    const { name } = request.query;
 
-  const legendary = LegendariesService.ListPokemonData(name);
+    const legendary = await LegendariesService.ListPokemonData(name);
 
-  return response.json(legendary);
-},
-create: (request, response) => {
-  const {
-    name, 
-    description, 
-    type, 
-    healthPoints, 
-    specialAttack, 
-    defense,  
-    attack, 
-    experiencie, 
-    specialDefense
-  } = request.body
+    return response.json(legendary)
+  },
+  create: async (request, response) => {
+    const {
+      name,
+      description,
+      type,
+      healthPoints,
+      specialAttack,
+      defense,
+      attack,
+      experience,
+      specialDefense
+    } = request.body
 
-  const legendary = LegendariesService.createLegendary(
-    name, 
-    description, 
-    type, 
-    healthPoints, 
-    specialAttack, 
-    defense,  
-    attack, 
-    experiencie, 
-    specialDefense   
-    
-  )
+    const legendary = await LegendariesService.createLegendary(
+      name,
+      description,
+      type,
+      healthPoints,
+      specialAttack,
+      defense,
+      attack,
+      experience,
+      specialDefense
+    )
 
-  return response.json(legendary);
-
-}
- 
+    return response.json(legendary);
+  }
 }
 
 module.exports = controller;
